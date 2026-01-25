@@ -165,4 +165,3 @@ print(tuple2[1][2])
 colors=("red","blue","yrllow","green","black")
 for i in colors:
     print("Colors:",i)
-

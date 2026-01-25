@@ -151,6 +151,7 @@ skill="Python"
 # 8 bits=1 Byte
 # 64 bytes= 8 
 
+
 # 1024 Bytes=1 KB
 # 1024 KB= 1 MB
 # 1024 MB- 1 GB
