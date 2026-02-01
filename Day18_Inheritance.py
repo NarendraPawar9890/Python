@@ -1,0 +1,137 @@
+# Inheritance-
+
+# purpose-
+# used to inherit parent class/super class / base class methods and propeties in a dervied class / child class / subclass
+# code reusability
+# readibility
+
+# Types of Inheritance
+
+# Single Inheritance
+# Multilevel Inhertiance
+# Multiple
+# Hirarchical
+# Hybrid Inheritance
+
+# single Inheritance-1 Parent- 1 Child
+
+class Parent:
+
+    name="Parent"
+
+    def __init__(self):
+        print("Parent Constructor called")
+    
+    def ParentDetails(self):
+        print("Parent Class Method")
+
+
+class Child(Parent):
+
+    child_name="Child"
+
+    def __init__(self):
+        print("Child Constrcutor called")
+    
+    def childDetails(self):
+        print("Child Method called")
+
+c1=Child()
+
+print(c1.child_name)
+
+c1.childDetails()
+
+
+# access parent method and properties
+
+print(c1.name)
+c1.ParentDetails()
+
+
+#################################################
+
+# Eg
+# Employee->Manager
+class Employee:
+
+    def __init__(self,name,empRole,empId,empDept,empCTC):
+        self.name=name
+        self.empRole=empRole
+        self.empId=empId
+        self.empDept=empDept
+        self.empCTC=empCTC
+
+    def empDetails(self):
+        print(f"Emp Id = {self.empId} \t  Emp Name = {self.name} and Emp Role = {self.empRole} and Emp Dept = {self.empDept} and Emp CTC ={self.empCTC}")
+
+    def parent(self):
+        print("hello parent class")
+
+# child class
+class Manager(Employee):
+    def __init__(self,name,dept_name,empId,empRole,empCTC,empDept):
+        self.name=name
+        self.dept_name=dept_name
+    
+        # called parent class construtor
+        super().__init__(name,empId,empRole,empCTC,empDept)
+
+    def managerDetails(self):
+        self.empDetails()
+        print(f"Manager Name Is. {self.name} and Manager Dept : {self.dept_name}")
+
+
+m1=Manager("Pratik","IT",12345,"Developer","20LPA","Admin")
+m1.managerDetails()
+
+
+################################################
+
+# Parent class- Vehicle
+        # Properties-vehicle_type,fuel_type,vehicle_mode
+        # methods- vehicle_details() 
+
+# child class- Car
+      # properties- brand,color,model,price,fuel_type
+      # methods- carDetails() / start()/ stop()
+
+    
+class Vehicle:
+    #class variable
+    def __init__(self,vehicle_type,vehicle_mode,fuel_type):
+
+        # instance variable
+        self.vehicle_type=vehicle_type
+        self.vehicle_mode=vehicle_mode
+        self.fuel_type=fuel_type
+
+    def details(self):
+        print(f"Vehicle Details.....{self.vehicle_type}")
+
+# child
+
+class Car(Vehicle):
+    def __init__(self,name,brand,color,model,price,vehicle_type,vehicle_mode,fuel_type):
+        self.name=name
+        self.brand=brand
+        self.color=color
+        self.model=model
+        self.price=price
+
+        # call parent __init__
+        super().__init__(vehicle_type,vehicle_mode,fuel_type)
+
+    def details(self):
+        # called parent details
+        super().details()
+        print(f"Car Details...{self.name}")
+        
+
+# c1=Car("BMW","BNY","Black","S+","50Lac")
+# c2=Car("Curve","TATA","White","Top end","30LAC")
+# c1.details()
+# c2.details()
+
+car1=Car("Hyrider","TATA","White","TOp","40LAC","4 Wheeler","Hybrid","Petrol")
+car1.details()
