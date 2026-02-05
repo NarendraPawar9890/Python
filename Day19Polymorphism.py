@@ -59,3 +59,44 @@ COD1=COD("uhegdf","#098","Order Successfull","45678")
 COD1.pay()
 COD1.details()
 print(COD1.customer_id)
+
+#################################################################################################################
+
+# method Overloading - compile time polymorphism
+# python does not support true overloading
+# but we can achive using args
+
+
+class Calculator:
+    def sum(self,a,b,c,*args):
+
+        for x in args:
+            print(a+b+c+x)
+        # print(a+b+c)
+
+result1=Calculator()
+result1.sum(10,20,30)
+result1.sum(10,20,30,100,200,300)
+
+
+# Operator overloading
+# same operator but differenet behavior
+
+# len(), +
+# type()
+
+string="Pratik"
+list=["A","b","C"]
+tuple_1=(10,20,30,50)
+print(len(string))
+print(len(list))
+print(len(tuple_1))
+
+# +
+
+print(10+20)
+print("ABC"+"PQR")
+
+print(str(10)+"20")
+a=str(10)
+print(a)
